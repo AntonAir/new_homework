@@ -1,9 +1,4 @@
-"use strict";
-
 let numberOfFilms = +prompt("Скільки фільмів ви вже подивились?", "");
-
-console.log(numberOfFilms);
-
 
 let personalMovieDB = {
   count: numberOfFilms,
@@ -13,27 +8,24 @@ let personalMovieDB = {
   privat: false,
 };
 
-
 for (let i = 0; i < 2; i++) {
   let a = prompt("Який останній фільм ви дивились?", "");
-  let b = prompt("Оцініть цей фільм від 1 до 5", "");
+  let b = prompt("Оцініть його від 1 до 5", "");
 
-  if (a != "" && b != "" && a != null && b != null && a.length < 20 && b.length < 20) {
+  if (a != null && b != null && a != "" && b != "" && a.length < 5 && b.length < 5) {
     personalMovieDB.movies[a] = b;
   } else {
     i--;
-  }
+  };
 };
 
 if (personalMovieDB.count < 10) {
-  console.log("Мало");
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30 ) {
-  console.log("Не погано");
-} else if (personalMovieDB.count > 30) {
-  console.log("COOL");
+  console.log("Ви дивитесь мало фільмів");
+} else if (personalMovieDB.count < 20) {
+  console.log("Не поганий результат");
 } else {
-  console.log("ERROR");
+  console.log("Та ви кіноман!");
 };
 
-
 console.log(personalMovieDB);
+
