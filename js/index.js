@@ -1,3 +1,5 @@
+"use strict";
+
 let numberOfFilms;
 
 function start() {
@@ -21,8 +23,8 @@ let personalMovieDB = {
 
 function rememberMyFilms() {
   for (let i = 0; i < 2; i++) {
-    let a = prompt("Який останній фільм ви дивились?", "");
-    let b = prompt("Оцініть його від 1 до 5", "");
+    let a = prompt("Який останній фільм ви дивились?", "").trim();
+    let b = prompt("Оцініть його від 1 до 5", "").trim();
 
     if (a != null && b != null && a != "" && b != "" && a.length < 5 && b.length < 5) {
       personalMovieDB.movies[a] = b;
